@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ec4899"/><stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="340" fill="url(#bg2)" rx="12"/>
+
+  <text x="40" y="45" font-family="system-ui" font-size="18" font-weight="800" fill="#f1f5f9">Why Agent Trace Viewer?</text>
+  <text x="40" y="68" font-family="system-ui" font-size="12" fill="#94a3b8">Coding agents are black boxes. This tool opens them up.</text>
+
+  <!-- Problem 1 -->
+  <rect x="40" y="90" width="350" height="50" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="55" y="112" font-family="system-ui" font-size="13" font-weight="700" fill="#f87171">😫 Problem:</text>
+  <text x="55" y="130" font-family="system-ui" font-size="10" fill="#94a3b8">Raw agent logs are lossy JSON firehoses — no structure, no navigation.</text>
+
+  <rect x="410" y="90" width="350" height="50" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+  <text x="425" y="112" font-family="system-ui" font-size="13" font-weight="700" fill="#6ee7b7">✅ Solution:</text>
+  <text x="425" y="130" font-family="system-ui" font-size="10" fill="#94a3b8">Structured, color-coded turns with collapsible sections and instant search.</text>
+
+  <!-- Problem 2 -->
+  <rect x="40" y="150" width="350" height="50" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="55" y="172" font-family="system-ui" font-size="13" font-weight="700" fill="#f87171">😫 Problem:</text>
+  <text x="55" y="190" font-family="system-ui" font-size="10" fill="#94a3b8">Hard to spot tool failures, slow calls, or lossy WebFetch summaries.</text>
+
+  <rect x="410" y="150" width="350" height="50" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+  <text x="425" y="172" font-family="system-ui" font-size="13" font-weight="700" fill="#6ee7b7">✅ Solution:</text>
+  <text x="425" y="190" font-family="system-ui" font-size="10" fill="#94a3b8">Auto-highlighted warnings for errors, long calls, large results, WebFetch.</text>
+
+  <!-- Problem 3 -->
+  <rect x="40" y="210" width="350" height="50" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="55" y="232" font-family="system-ui" font-size="13" font-weight="700" fill="#f87171">😫 Problem:</text>
+  <text x="55" y="250" font-family="system-ui" font-size="10" fill="#94a3b8">No way to search, jump, or get a bird's eye view of what happened.</text>
+
+  <rect x="410" y="210" width="350" height="50" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+  <text x="425" y="232" font-family="system-ui" font-size="13" font-weight="700" fill="#6ee7b7">✅ Solution:</text>
+  <text x="425" y="250" font-family="system-ui" font-size="10" fill="#94a3b8">Global search (⌘F / /), timeline sidebar, turn-by-turn navigation.</text>
+
+  <!-- CTA -->
+  <rect x="250" y="280" width="300" height="36" rx="18" fill="url(#g1)"/>
+  <text x="400" y="303" font-family="system-ui" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">No data leaves your machine → 100% local</text>
+</svg>

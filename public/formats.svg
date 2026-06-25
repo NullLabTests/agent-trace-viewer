@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="340" fill="url(#bg3)" rx="12"/>
+
+  <text x="40" y="40" font-family="system-ui" font-size="16" font-weight="800" fill="#f1f5f9">Supported Agent Formats</text>
+  <text x="40" y="62" font-family="system-ui" font-size="12" fill="#94a3b8">Auto-detected. Just upload your log file.</text>
+
+  <!-- Row 1 -->
+  <rect x="40" y="80" width="170" height="65" rx="6" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <rect x="40" y="80" width="170" height="24" rx="6" fill="#6366f1"/>
+  <rect x="40" y="98" width="170" height="6" rx="0" fill="#4338ca"/>
+  <text x="125" y="96" font-family="system-ui" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">🔬 Claude Code</text>
+  <text x="125" y="118" font-family="system-ui" font-size="9" fill="#a5b4fc" text-anchor="middle">.jsonl — Full support</text>
+  <text x="125" y="133" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">Thinking, tool calls, results</text>
+
+  <!-- Row 2 -->
+  <rect x="225" y="80" width="170" height="65" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="225" y="80" width="170" height="24" rx="6" fill="#10b981"/>
+  <rect x="225" y="98" width="170" height="6" rx="0" fill="#059669"/>
+  <text x="310" y="96" font-family="system-ui" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">🦙 Ollama / Local LLM</text>
+  <text x="310" y="118" font-family="system-ui" font-size="9" fill="#a7f3d0" text-anchor="middle">.jsonl — Full support</text>
+  <text x="310" y="133" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">Chat, tool_calls, metadata</text>
+
+  <!-- Row 3 -->
+  <rect x="410" y="80" width="170" height="65" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <rect x="410" y="80" width="170" height="24" rx="6" fill="#f59e0b"/>
+  <rect x="410" y="98" width="170" height="6" rx="0" fill="#d97706"/>
+  <text x="495" y="96" font-family="system-ui" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">🤖 SWE-agent</text>
+  <text x="495" y="118" font-family="system-ui" font-size="9" fill="#fde68a" text-anchor="middle">.json — Full support</text>
+  <text x="495" y="133" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">Trajectories, steps, actions</text>
+
+  <!-- Row 4 -->
+  <rect x="595" y="80" width="170" height="65" rx="6" fill="#1e293b" stroke="#ec4899" stroke-width="1.5"/>
+  <rect x="595" y="80" width="170" height="24" rx="6" fill="#ec4899"/>
+  <rect x="595" y="98" width="170" height="6" rx="0" fill="#db2777"/>
+  <text x="680" y="96" font-family="system-ui" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">🧑‍💻 Aider</text>
+  <text x="680" y="118" font-family="system-ui" font-size="9" fill="#fbcfe8" text-anchor="middle">.jsonl / .md — Support</text>
+  <text x="680" y="133" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">Tool calls, markdown chats</text>
+
+  <!-- Row 2 -->
+  <rect x="40" y="155" width="170" height="65" rx="6" fill="#1e293b" stroke="#06b6d4" stroke-width="1.5"/>
+  <rect x="40" y="155" width="170" height="24" rx="6" fill="#06b6d4"/>
+  <rect x="40" y="173" width="170" height="6" rx="0" fill="#0891b2"/>
+  <text x="125" y="171" font-family="system-ui" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">⚡ Codex / OpenDevin</text>
+  <text x="125" y="193" font-family="system-ui" font-size="9" fill="#a5f3fc" text-anchor="middle">.json / .jsonl — Support</text>
+  <text x="125" y="208" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">Message-based traces</text>
+
+  <!-- Row 6 -->
+  <rect x="225" y="155" width="170" height="65" rx="6" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+  <rect x="225" y="155" width="170" height="24" rx="6" fill="#64748b"/>
+  <rect x="225" y="173" width="170" height="6" rx="0" fill="#475569"/>
+  <text x="310" y="171" font-family="system-ui" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">📄 Generic JSON/JSONL</text>
+  <text x="310" y="193" font-family="system-ui" font-size="9" fill="#cbd5e1" text-anchor="middle">Any .json / .jsonl</text>
+  <text x="310" y="208" font-family="system-ui" font-size="8" fill="#64748b" text-anchor="middle">Fallback auto-detection</text>
+
+  <!-- CTA -->
+  <rect x="180" y="245" width="440" height="40" rx="20" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="400" y="270" font-family="system-ui" font-size="12" fill="#94a3b8" text-anchor="middle">Missing your agent? Add a parser in 10 lines of code — see Contributing</text>
+
+  <!-- Drop zone hint -->
+  <rect x="280" y="295" width="240" height="28" rx="14" fill="#1e293b" stroke="#6366f1" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="400" y="314" font-family="system-ui" font-size="11" fill="#a5b4fc" text-anchor="middle">📁 Drag & drop any log file to start</text>
+</svg>

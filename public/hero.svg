@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="accent3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#bg)" rx="12"/>
+
+  <text x="50" y="60" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#fff">Agent Trace Viewer</text>
+
+  <text x="50" y="90" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">Make sense of your coding agent's black box</text>
+
+  <!-- Left side: Before (messy) -->
+  <rect x="40" y="120" width="340" height="240" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+  <rect x="40" y="120" width="340" height="32" rx="8" fill="#334155"/>
+  <rect x="40" y="144" width="340" height="8" rx="0" fill="#334155"/>
+  <text x="60" y="142" font-family="monospace" font-size="11" fill="#ef4444" font-weight="700">✕ RAW TRANSCRIPT</text>
+
+  <text x="60" y="175" font-family="monospace" font-size="9" fill="#64748b">{"type":"content_block_delta",</text>
+  <text x="60" y="190" font-family="monospace" font-size="9" fill="#64748b"> "delta":{"type":"text",</text>
+  <text x="60" y="205" font-family="monospace" font-size="9" fill="#64748b"> "text":"Let me search..."}}</text>
+  <text x="60" y="225" font-family="monospace" font-size="9" fill="#475569">...</text>
+  <text x="60" y="240" font-family="monospace" font-size="9" fill="#64748b">{"type":"tool_use",</text>
+  <text x="60" y="255" font-family="monospace" font-size="9" fill="#64748b"> "name":"WebFetch",</text>
+  <text x="60" y="270" font-family="monospace" font-size="9" fill="#64748b"> "input":{"url":"..."}}</text>
+  <text x="60" y="290" font-family="monospace" font-size="9" fill="#475569">...</text>
+  <text x="60" y="305" font-family="monospace" font-size="9" fill="#64748b">{"type":"tool_result",</text>
+  <text x="60" y="320" font-family="monospace" font-size="9" fill="#64748b"> "content":[{"text":"...")}</text>
+  <text x="60" y="340" font-family="monospace" font-size="9" fill="#475569">// 847 more lines...</text>
+
+  <!-- Arrow -->
+  <text x="395" y="245" font-family="system-ui" font-size="28" fill="#6366f1" filter="url(#glow)">→</text>
+
+  <!-- Right side: After (clean) -->
+  <rect x="420" y="120" width="340" height="240" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+  <rect x="420" y="120" width="340" height="32" rx="8" fill="#334155"/>
+  <rect x="420" y="144" width="340" height="8" rx="0" fill="#334155"/>
+  <text x="440" y="142" font-family="system-ui" font-size="11" fill="#10b981" font-weight="700">✓ AGENT TRACE VIEWER</text>
+
+  <!-- User message -->
+  <rect x="435" y="160" width="310" height="20" rx="4" fill="#3b82f6" opacity="0.2"/>
+  <circle cx="445" cy="170" r="5" fill="#3b82f6"/>
+  <text x="456" y="174" font-family="system-ui" font-size="10" fill="#93c5fd" font-weight="600">User</text>
+  <text x="490" y="174" font-family="system-ui" font-size="9" fill="#94a3b8">Fix the login button...</text>
+
+  <!-- Thinking -->
+  <rect x="435" y="185" width="310" height="18" rx="4" fill="#f59e0b" opacity="0.1"/>
+  <circle cx="445" cy="194" r="5" fill="#f59e0b"/>
+  <text x="456" y="198" font-family="system-ui" font-size="10" fill="#fbbf24" font-weight="600">Thinking</text>
+  <text x="510" y="198" font-family="system-ui" font-size="9" fill="#94a3b8">Let me look at the AuthContext...</text>
+
+  <!-- Tool call -->
+  <rect x="435" y="208" width="310" height="18" rx="4" fill="#8b5cf6" opacity="0.1"/>
+  <circle cx="445" cy="217" r="5" fill="#8b5cf6"/>
+  <text x="456" y="221" font-family="system-ui" font-size="10" fill="#a78bfa" font-weight="600">Read</text>
+  <text x="485" y="221" font-family="system-ui" font-size="9" fill="#94a3b8">app/dashboard/page.tsx</text>
+
+  <!-- Tool result -->
+  <rect x="435" y="231" width="310" height="18" rx="4" fill="#64748b" opacity="0.1"/>
+  <circle cx="445" cy="240" r="5" fill="#64748b"/>
+  <text x="456" y="244" font-family="system-ui" font-size="10" fill="#94a3b8" font-weight="600">Result</text>
+  <text x="495" y="244" font-family="system-ui" font-size="9" fill="#94a3b8">32 lines returned</text>
+
+  <!-- Assistant message -->
+  <rect x="435" y="254" width="310" height="20" rx="4" fill="#10b981" opacity="0.1"/>
+  <circle cx="445" cy="264" r="5" fill="#10b981"/>
+  <text x="456" y="268" font-family="system-ui" font-size="10" fill="#6ee7b7" font-weight="600">Assistant</text>
+  <text x="515" y="268" font-family="system-ui" font-size="9" fill="#94a3b8">I found the issue...</text>
+
+  <!-- Warning badge -->
+  <rect x="435" y="279" width="310" height="18" rx="4" fill="#ef4444" opacity="0.12"/>
+  <circle cx="445" cy="288" r="5" fill="#ef4444"/>
+  <text x="456" y="292" font-family="system-ui" font-size="10" fill="#fca5a5" font-weight="600">⚠ Warning</text>
+  <text x="515" y="292" font-family="system-ui" font-size="9" fill="#94a3b8">Tool returned error • 45s duration</text>
+
+  <!-- Search bar -->
+  <rect x="435" y="305" width="310" height="22" rx="6" fill="#334155"/>
+  <text x="445" y="320" font-family="system-ui" font-size="10" fill="#64748b">🔍 Search transcript...</text>
+  <text x="730" y="320" font-family="system-ui" font-size="8" fill="#475569" opacity="0.6">⌘F</text>
+
+  <!-- Timeline -->
+  <rect x="550" y="332" width="60" height="14" rx="3" fill="#334155"/>
+  <text x="558" y="342" font-family="system-ui" font-size="8" fill="#64748b">◀ ▶ 12 turns</text>
+</svg>
