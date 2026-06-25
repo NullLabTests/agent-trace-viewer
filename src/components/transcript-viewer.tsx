@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { Search, Upload, FileDown, PanelRightClose, PanelRightOpen } from 'lucide-react';
+import { Search, Upload, FileDown, PanelRightClose, PanelRightOpen, ChevronDown } from 'lucide-react';
 import { Transcript } from '@/lib/types';
 import { parseTranscript } from '@/lib/parsers';
 import TurnCard from './turn-card';
@@ -10,9 +10,22 @@ import SearchDialog from './search-dialog';
 import MetadataPanel from './metadata-panel';
 import { Separator } from './ui/separator';
 import { ScrollArea } from './ui/scroll-area';
+import { Badge } from './ui/badge';
 import { cn } from '@/lib/utils';
 
-const DEMO_TRANSCRIPT_URL = '/demo-transcripts/claude-code-demo.jsonl';
+interface DemoOption {
+  label: string;
+  url: string;
+  fileName: string;
+  description: string;
+}
+
+const DEMOS: DemoOption[] = [
+  { label: 'Claude Code', url: '/demo-transcripts/claude-code-demo.jsonl', fileName: 'claude-code-demo.jsonl', description: 'Anthropic\'s CLI coding agent — full tool calls, thinking traces' },
+  { label: 'Ollama / Local LLM', url: '/demo-transcripts/ollama-demo.jsonl', fileName: 'ollama-demo.jsonl', description: 'Local LLM chat via Ollama API format' },
+  { label: 'SWE-agent', url: '/demo-transcripts/swe-agent-demo.json', fileName: 'swe-agent-demo.json', description: 'SWE-agent trajectory on a Django bug fix' },
+  { label: 'Aider', url: '/demo-transcripts/aider-demo.jsonl', fileName: 'aider-demo.jsonl', description: 'AI pair programming with tool calls' },
+];
 
 export default function TranscriptViewer() {
   const [transcript, setTranscript] = useState<Transcript | null>(null);
@@ -22,6 +35,7 @@ export default function TranscriptViewer() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchHighlights, setSearchHighlights] = useState<string[]>([]);
   const [activeTurnId, setActiveTurnId] = useState<string | undefined>();
+  const [demoMenuOpen, setDemoMenuOpen] = useState(false);
   const viewerRef = useRef<HTMLDivElement>(null);
 
   const handleTranscriptLoaded = useCallback((t: Transcript) => {
@@ -45,20 +59,25 @@ export default function TranscriptViewer() {
     }
   }, [handleTranscriptLoaded]);
 
-  const loadDemo = useCallback(async () => {
+  const loadDemo = useCallback(async (demo: DemoOption) => {
     setLoading(true);
     setError(null);
+    setDemoMenuOpen(false);
     try {
-      const res = await fetch(DEMO_TRANSCRIPT_URL);
+      const res = await fetch(demo.url);
       const text = await res.text();
-      const t = parseTranscript(text, 'claude-code-demo.jsonl');
+      const t = parseTranscript(text, demo.fileName);
       handleTranscriptLoaded(t);
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Failed to load demo');
+      setError(e instanceof Error ? e.message : `Failed to load ${demo.label} demo`);
     } finally {
       setLoading(false);
     }
   }, [handleTranscriptLoaded]);
+
+  const loadDefaultDemo = useCallback(async () => {
+    await loadDemo(DEMOS[0]);
+  }, [loadDemo]);
 
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -113,14 +132,19 @@ export default function TranscriptViewer() {
       if (e.key === '/' && !searchOpen) {
         setSearchOpen(true);
       }
+      if (e.key === 'Escape') {
+        setDemoMenuOpen(false);
+      }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [transcript, searchOpen]);
 
   useEffect(() => {
-    loadDemo();
+    loadDefaultDemo();
   }, []);
+
+  const parserName = transcript?.parserName;
 
   if (!transcript) {
     return (
@@ -136,7 +160,7 @@ export default function TranscriptViewer() {
           <div>
             <h2 className="text-lg font-semibold mb-1">Load an Agent Transcript</h2>
             <p className="text-sm text-muted-foreground">
-              Upload a JSONL, JSON, or markdown file exported from Claude Code, Codex, or other coding agents.
+              Upload a JSONL, JSON, or markdown file from Claude Code, Ollama, Aider, SWE-agent, Codex, or any coding agent.
             </p>
           </div>
           <div className="flex flex-col items-center gap-3">
@@ -146,14 +170,31 @@ export default function TranscriptViewer() {
               <input type="file" accept=".jsonl,.json,.md,.txt" onChange={handleFileInput} className="hidden" />
             </label>
             <span className="text-xs text-muted-foreground">or drop a file here</span>
-            <Separator className="max-w-[120px]" />
-            <button
-              onClick={loadDemo}
-              disabled={loading}
-              className="text-sm text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors disabled:opacity-50"
-            >
-              {loading ? 'Loading...' : 'Load Demo Transcript'}
-            </button>
+            <Separator className="max-w-[160px]" />
+            <div className="relative">
+              <button
+                onClick={() => setDemoMenuOpen(!demoMenuOpen)}
+                disabled={loading}
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors disabled:opacity-50"
+              >
+                {loading ? 'Loading...' : 'Load Demo Transcript'}
+                <ChevronDown className="h-3 w-3" />
+              </button>
+              {demoMenuOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-popover border rounded-xl shadow-lg z-20 overflow-hidden">
+                  {DEMOS.map((demo) => (
+                    <button
+                      key={demo.label}
+                      onClick={() => loadDemo(demo)}
+                      className="w-full text-left px-4 py-3 hover:bg-accent transition-colors border-b last:border-b-0"
+                    >
+                      <div className="text-sm font-medium">{demo.label}</div>
+                      <div className="text-xs text-muted-foreground mt-0.5">{demo.description}</div>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
           {error && (
             <p className="text-sm text-destructive bg-destructive/10 rounded-lg px-3 py-2">{error}</p>
@@ -190,6 +231,9 @@ export default function TranscriptViewer() {
             <span className="text-xs text-muted-foreground/50 shrink-0">
               {transcript.turns.length} turns
             </span>
+            {parserName && (
+              <Badge variant="outline" className="text-[10px] shrink-0">{parserName}</Badge>
+            )}
           </div>
 
           <div className="flex items-center gap-1">
@@ -224,7 +268,6 @@ export default function TranscriptViewer() {
               <TurnCard
                 key={turn.id}
                 turn={turn}
-                searchTerm={searchHighlights.includes(turn.id) ? undefined : undefined}
                 isActive={activeTurnId === turn.id}
               />
             ))}

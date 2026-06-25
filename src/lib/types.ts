@@ -33,6 +33,7 @@ export interface Transcript {
     [key: string]: unknown;
   };
   source?: string;
+  parserName?: string;
 }
 
 export interface Parser {
