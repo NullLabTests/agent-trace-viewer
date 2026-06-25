@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c0c0e"/>
+      <stop offset="100%" stop-color="#18181b"/>
+    </linearGradient>
+    <linearGradient id="headerBg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#27272a"/>
+      <stop offset="100%" stop-color="#18181b"/>
+    </linearGradient>
+    <linearGradient id="searchBtn" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b3b40"/>
+      <stop offset="100%" stop-color="#2a2a2e"/>
+    </linearGradient>
+    <filter id="appShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glowAccent">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer glow -->
+  <rect x="-10" y="-10" width="920" height="670" rx="16" fill="#1a1a2e" opacity="0.3" filter="url(#appShadow)"/>
+
+  <!-- App window -->
+  <rect x="20" y="20" width="860" height="610" rx="12" fill="url(#bg)" stroke="#27272a" stroke-width="1.5"/>
+
+  <!-- Title bar -->
+  <rect x="20" y="20" width="860" height="44" rx="12" fill="url(#headerBg)"/>
+  <rect x="20" y="56" width="860" height="8" rx="0" fill="url(#headerBg)"/>
+
+  <!-- Window dots -->
+  <circle cx="50" cy="42" r="6" fill="#ef4444"/>
+  <circle cx="70" cy="42" r="6" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="90" cy="42" r="6" fill="#10b981" opacity="0.8"/>
+
+  <!-- App title -->
+  <rect x="120" y="32" width="24" height="24" rx="6" fill="#6366f1"/>
+  <text x="132" y="49" font-family="system-ui" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">AV</text>
+  <text x="152" y="49" font-family="system-ui" font-size="11" fill="#a1a1aa" font-weight="600">Agent Trace Viewer</text>
+
+  <!-- Header bar -->
+  <rect x="20" y="64" width="860" height="36" rx="0" fill="#1a1b1e"/>
+  <rect x="20" y="64" width="860" height="1" rx="0" fill="#27272a"/>
+  <rect x="20" y="99" width="860" height="1" rx="0" fill="#27272a"/>
+
+  <!-- Search button in header -->
+  <rect x="530" y="71" width="80" height="22" rx="6" fill="url(#searchBtn)" stroke="#3f3f46" stroke-width="0.5"/>
+  <text x="542" y="85" font-family="system-ui" font-size="9" fill="#71717a">🔍 Search</text>
+  <rect x="592" y="74" width="18" height="14" rx="3" fill="#27272a"/>
+  <text x="601" y="84" font-family="system-ui" font-size="7" fill="#52525b">/</text>
+
+  <!-- Export button -->
+  <rect x="620" y="71" width="22" height="22" rx="6" fill="#1a1b1e" stroke="#3f3f46" stroke-width="0.5"/>
+  <text x="631" y="85" font-family="system-ui" font-size="9" fill="#71717a">↓</text>
+
+  <!-- Theme toggle -->
+  <rect x="652" y="71" width="22" height="22" rx="6" fill="#1a1b1e" stroke="#3f3f46" stroke-width="0.5"/>
+  <text x="663" y="85" font-family="system-ui" font-size="9" fill="#71717a">🌙</text>
+
+  <!-- GitHub link -->
+  <rect x="684" y="71" width="22" height="22" rx="6" fill="#1a1b1e" stroke="#3f3f46" stroke-width="0.5"/>
+  <text x="695" y="85" font-family="system-ui" font-size="9" fill="#71717a">⌂</text>
+
+  <!-- Turn count badge -->
+  <rect x="280" y="74" width="60" height="18" rx="9" fill="#1e1e22" stroke="#3f3f46" stroke-width="0.5"/>
+  <text x="310" y="86" font-family="system-ui" font-size="8" fill="#71717a" text-anchor="middle">12 turns</text>
+
+  <!-- Sidebar area -->
+  <rect x="20" y="100" width="220" height="530" fill="#121214"/>
+  <rect x="239" y="100" width="1" height="530" fill="#27272a"/>
+
+  <!-- Sidebar header -->
+  <text x="36" y="122" font-family="system-ui" font-size="9" fill="#52525b" font-weight="700" letter-spacing="1">TIMELINE</text>
+  <text x="36" y="135" font-family="system-ui" font-size="8" fill="#3f3f46">12 turns</text>
+
+  <!-- Sidebar items -->
+  <rect x="30" y="148" width="195" height="28" rx="5" fill="#1e1e22" stroke="#3f3f46" stroke-width="0.5"/>
+  <circle cx="46" cy="161" r="4" fill="#3b82f6"/>
+  <text x="56" y="165" font-family="system-ui" font-size="9" fill="#e4e4e7">User</text>
+  <text x="56" y="172" font-family="system-ui" font-size="7" fill="#52525b">Fix the login button on...</text>
+
+  <rect x="30" y="180" width="195" height="28" rx="5" fill="#1a1b1e"/>
+  <circle cx="46" cy="193" r="4" fill="#f59e0b"/>
+  <text x="56" y="197" font-family="system-ui" font-size="9" fill="#a1a1aa">Thinking</text>
+  <text x="56" y="204" font-family="system-ui" font-size="7" fill="#52525b">The user wants me to fi...</text>
+
+  <rect x="30" y="212" width="195" height="28" rx="5" fill="#1a1b1e"/>
+  <circle cx="46" cy="225" r="4" fill="#8b5cf6"/>
+  <text x="56" y="229" font-family="system-ui" font-size="9" fill="#a1a1aa">Read</text>
+  <text x="56" y="236" font-family="system-ui" font-size="7" fill="#52525b">app/dashboard/page.tsx</text>
+
+  <rect x="30" y="244" width="195" height="28" rx="5" fill="#1a1b1e"/>
+  <circle cx="46" cy="257" r="4" fill="#a1a1aa"/>
+  <text x="56" y="261" font-family="system-ui" font-size="9" fill="#a1a1aa">Result</text>
+  <text x="56" y="268" font-family="system-ui" font-size="7" fill="#52525b">32 lines returned</text>
+
+  <rect x="30" y="276" width="195" height="28" rx="5" fill="#1a1b1e"/>
+  <circle cx="46" cy="289" r="4" fill="#10b981"/>
+  <text x="56" y="293" font-family="system-ui" font-size="9" fill="#a1a1aa">Assistant</text>
+  <text x="56" y="300" font-family="system-ui" font-size="7" fill="#52525b">I found the issue...</text>
+
+  <rect x="30" y="308" width="195" height="28" rx="5" fill="#1a1b1e"/>
+  <circle cx="46" cy="321" r="4" fill="#ef4444"/>
+  <text x="56" y="325" font-family="system-ui" font-size="9" fill="#a1a1aa">⚠ Warning</text>
+  <text x="56" y="332" font-family="system-ui" font-size="7" fill="#52525b">Tool returned error</text>
+
+  <rect x="30" y="340" width="195" height="28" rx="5" fill="#1a1b1e"/>
+  <circle cx="46" cy="353" r="4" fill="#3b82f6"/>
+  <text x="56" y="357" font-family="system-ui" font-size="9" fill="#a1a1aa">User</text>
+  <text x="56" y="364" font-family="system-ui" font-size="7" fill="#52525b">Can you also add a load..."/>
+
+  <!-- Main content area -->
+  <!-- Metadata cards row -->
+  <rect x="260" y="115" width="130" height="50" rx="6" fill="#18181b" stroke="#27272a" stroke-width="0.5"/>
+  <text x="276" y="133" font-family="system-ui" font-size="8" fill="#71717a"># Total Turns</text>
+  <text x="276" y="152" font-family="system-ui" font-size="16" fill="#e4e4e7" font-weight="700">12</text>
+
+  <rect x="400" y="115" width="130" height="50" rx="6" fill="#18181b" stroke="#27272a" stroke-width="0.5"/>
+  <text x="416" y="133" font-family="system-ui" font-size="8" fill="#71717a">🔧 Tool Calls</text>
+  <text x="416" y="152" font-family="system-ui" font-size="16" fill="#e4e4e7" font-weight="700">7</text>
+
+  <rect x="540" y="115" width="130" height="50" rx="6" fill="#18181b" stroke="#27272a" stroke-width="0.5"/>
+  <text x="556" y="133" font-family="system-ui" font-size="8" fill="#71717a">⏱ Duration</text>
+  <text x="556" y="152" font-family="system-ui" font-size="16" fill="#e4e4e7" font-weight="700">2.3m</text>
+
+  <rect x="680" y="115" width="180" height="50" rx="6" fill="#18181b" stroke="#27272a" stroke-width="0.5"/>
+  <text x="696" y="133" font-family="system-ui" font-size="8" fill="#71717a">💻 Model</text>
+  <text x="696" y="152" font-family="system-ui" font-size="14" fill="#e4e4e7" font-weight="600">claude-sonnet-4</text>
+
+  <!-- Turn cards -->
+  <!-- User -->
+  <rect x="260" y="180" width="600" height="36" rx="6" fill="#1e1e2b" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="260" y="180" width="3" height="36" rx="2" fill="#3b82f6"/>
+  <circle cx="278" cy="199" r="5" fill="#3b82f6" opacity="0.3"/>
+  <text x="280" y="192" font-family="system-ui" font-size="8" fill="#60a5fa" font-weight="700" letter-spacing="0.5">USER</text>
+  <text x="280" y="207" font-family="system-ui" font-size="9" fill="#d4d4d8">Fix the login button on the dashboard page — it's not triggering the auth flow.</text>
+
+  <!-- Thinking -->
+  <rect x="260" y="220" width="600" height="36" rx="6" fill="#1e1e1b" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="260" y="220" width="3" height="36" rx="2" fill="#f59e0b"/>
+  <circle cx="278" cy="239" r="5" fill="#f59e0b" opacity="0.3"/>
+  <text x="280" y="232" font-family="system-ui" font-size="8" fill="#fbbf24" font-weight="700" letter-spacing="0.5">THINKING</text>
+  <text x="280" y="247" font-family="system-ui" font-size="9" fill="#a1a1aa" font-style="italic">Let me look at the AuthContext and the dashboard page to understand the issue...</text>
+
+  <!-- Tool call -->
+  <rect x="260" y="260" width="600" height="36" rx="6" fill="#1e1b2e" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="260" y="260" width="3" height="36" rx="2" fill="#8b5cf6"/>
+  <circle cx="278" cy="279" r="5" fill="#8b5cf6" opacity="0.3"/>
+  <rect x="290" y="267" width="40" height="14" rx="3" fill="#8b5cf6" opacity="0.15"/>
+  <text x="295" y="277" font-family="system-ui" font-size="7" fill="#a78bfa" font-weight="600">Read</text>
+  <text x="280" y="292" font-family="system-ui" font-size="8" fill="#71717a">app/dashboard/page.tsx</text>
+
+  <!-- Tool result with warning -->
+  <rect x="260" y="300" width="600" height="36" rx="6" fill="#1e1b1b" stroke="#ef4444" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="260" y="300" width="3" height="36" rx="2" fill="#ef4444"/>
+  <circle cx="278" cy="319" r="5" fill="#ef4444" opacity="0.3"/>
+  <text x="280" y="312" font-family="system-ui" font-size="8" fill="#fca5a5" font-weight="700" letter-spacing="0.5">TOOL RESULT</text>
+  <rect x="355" y="305" width="90" height="14" rx="3" fill="#ef4444" opacity="0.15"/>
+  <text x="360" y="315" font-family="system-ui" font-size="7" fill="#fca5a5" font-weight="600">⚠ Tool returned error</text>
+  <text x="280" y="327" font-family="system-ui" font-size="8" fill="#71717a">Error: login() is not awaiting the auth promise...</text>
+
+  <!-- Assistant message -->
+  <rect x="260" y="340" width="600" height="50" rx="6" fill="#1b1e1b" stroke="#10b981" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="260" y="340" width="3" height="50" rx="2" fill="#10b981"/>
+  <circle cx="278" cy="359" r="5" fill="#10b981" opacity="0.3"/>
+  <text x="280" y="352" font-family="system-ui" font-size="8" fill="#6ee7b7" font-weight="700" letter-spacing="0.5">ASSISTANT</text>
+  <text x="280" y="366" font-family="system-ui" font-size="9" fill="#d4d4d8">I found the issue. The `handleLogin` function is calling `login()` without awaiting it.</text>
+  <text x="280" y="380" font-family="system-ui" font-size="9" fill="#d4d4d8">Let me fix that with proper async handling and error boundaries.</text>
+
+  <!-- Annotations -->
+  <rect x="790" y="188" width="60" height="18" rx="9" fill="#27272a" stroke="#3f3f46" stroke-width="0.5"/>
+  <text x="820" y="200" font-family="system-ui" font-size="7" fill="#71717a" text-anchor="middle">Turn 1/12</text>
+
+  <rect x="735" y="234" width="88" height="18" rx="9" fill="#27272a" stroke="#3f3f46" stroke-width="0.5"/>
+  <text x="779" y="246" font-family="system-ui" font-size="7" fill="#71717a" text-anchor="middle">🔽 Click to expand</text>
+
+  <!-- Search overlay hint -->
+  <rect x="260" y="405" width="600" height="24" rx="12" fill="#1e1e22" stroke="#3f3f46" stroke-width="0.5"/>
+  <text x="280" y="421" font-family="system-ui" font-size="9" fill="#52525b">🔍 Search any turn, keyword, or tool name...</text>
+  <text x="820" y="421" font-family="system-ui" font-size="7" fill="#3f3f46">⌘F</text>
+
+  <!-- Bottom scroll hint -->
+  <rect x="480" y="445" width="160" height="20" rx="10" fill="#1e1e22" stroke="#3f3f46" stroke-width="0.5"/>
+  <text x="560" y="459" font-family="system-ui" font-size="8" fill="#52525b" text-anchor="middle">↓ 5 more turns below</text>
+
+  <!-- Feature callouts -->
+  <line x1="160" y1="162" x2="130" y2="135" stroke="#6366f1" stroke-width="1" stroke-dasharray="3,2"/>
+  <circle cx="130" cy="135" r="10" fill="none" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="130" y="138" font-family="system-ui" font-size="8" fill="#6366f1" text-anchor="middle">1</text>
+  <text x="50" y="130" font-family="system-ui" font-size="8" fill="#6366f1">Click any turn</text>
+  <text x="50" y="140" font-family="system-ui" font-size="7" fill="#52525b">to jump instantly</text>
+
+  <line x1="160" y1="230" x2="130" y2="205" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,2"/>
+  <circle cx="130" cy="205" r="10" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="130" y="208" font-family="system-ui" font-size="8" fill="#f59e0b" text-anchor="middle">2</text>
+  <text x="50" y="200" font-family="system-ui" font-size="8" fill="#f59e0b">Collapse/expand</text>
+  <text x="50" y="210" font-family="system-ui" font-size="7" fill="#52525b">thinking traces</text>
+
+  <line x1="160" y1="310" x2="130" y2="285" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,2"/>
+  <circle cx="130" cy="285" r="10" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="130" y="288" font-family="system-ui" font-size="8" fill="#ef4444" text-anchor="middle">3</text>
+  <text x="50" y="280" font-family="system-ui" font-size="8" fill="#ef4444">Auto-warnings</text>
+  <text x="50" y="290" font-family="system-ui" font-size="7" fill="#52525b">for errors & slow calls</text>
+</svg>
